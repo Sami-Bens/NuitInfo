@@ -1,0 +1,25 @@
+.LoginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
+}
+
+.LoginForm .Login, .LoginForm .Register{
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LoginForm .Login .form-grp, .LoginForm .Register .form-grp{
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.LoginForm .Login .form-grp input[type=text],.LoginForm .Login .form-grp input[type=email],.LoginForm .Login .form-grp input[type=password],
+.LoginForm .Register .form-grp input[type=text],.LoginForm .Register .form-grp input[type=email], .LoginForm .Register .form-grp input[type=password]{
+    float: right;
+}
