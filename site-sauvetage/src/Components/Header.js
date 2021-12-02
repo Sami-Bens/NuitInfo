@@ -5,18 +5,22 @@ function Header() {
     return (
         <div>
             <nav>
-                <div className = "div__header1">
-                    <div className = "div_images">
-                    <img className = "logo_site_1" alt = "logo_site_1"/>
-                    <img className = "logo_site_2" alt = "logo_site_2"/>
-                    <img className = "logo_ziziteurs" alt = "logo_ziziteurs"/>
+                <div className="div__header1">
+                    <div className="div_images">
+                        <img className="logo_site_1" alt="logo_site_1" />
+                        <img className="logo_site_2" alt="logo_site_2" />
+                        <img className="logo_ziziteurs" alt="logo_ziziteurs" />
+                    </div>
+                    <div className = "recherche">
+                        
+                    </div>
                 </div>
-                <div className = "menu_container">
-                    <ul className = "menu_tab">
-                        <li className = "element_menu">Accueil</li>
-                        <li className = "element_menu">Recherche</li>
-                        <li className = "element_menu">Sauveteurs</li>
-                        <li className = "element_menu">Sauvetages</li>
+                <div className="menu_container">
+                    <ul className="menu_tab">
+                        <li className="element_menu">Accueil</li>
+                        <li className="element_menu">Recherche</li>
+                        <li className="element_menu">Sauveteurs</li>
+                        <li className="element_menu">Sauvetages</li>
                     </ul>
                 </div>
             </nav>
