@@ -15,12 +15,12 @@ export function initFirebase(){
     }
 };
 
-export function addSauveteur(id, firstName, lastName, info) {
+export function addSauveteur(firstName, lastName, info) {
     initFirebase();
     let db = getFirestore();
     try {
         setDoc(doc(db, "sauveteur", id), {
-            id: id,
+            id: getDateTime() + "_" + firstName + "_" + lastName,
             firstName: firstName,
             lastName: lastName,
             info: info
