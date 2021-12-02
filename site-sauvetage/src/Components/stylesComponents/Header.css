@@ -1,0 +1,125 @@
+.nav_header{
+    background: #2469af;
+    color:white;
+    min-width: 750px;
+}
+
+.div_header1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div_images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+}
+.logo_ziziteurs{
+    height: 130px;
+}
+.logo_site{
+    height:100px;
+}
+
+.menu_container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: #153a5f;
+    height: 60px;
+    /*background-image: url(../../medias/wave.svg);*/
+}
+
+.menu_tab{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    cursor: pointer;
+
+}
+.element_menu{
+    will-change: transform;
+    border-radius: 6%;
+}
+.element_menu:hover{
+    transform: scale(1.1);
+    background-color: #fff;
+    color: #153a5f;
+    transition: all 0.5s ease;
+}
+
+.lien_home{
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 600px){
+    /*responsive quand l'écran est trop petit*/
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.barre_recherche {
+  width: 75%;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  margin-right: 2px ;
+}
+
+.barre_recherche:focus{
+  color: #00B4CC;
+  transform: scale(1.05);
+transition: all 0.5s ease;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bouton_recherche{
+    outline: none;
+    border: none;
+    border-radius: 51%;
+    height: 29px;
+    background: #00B4CC;
+}

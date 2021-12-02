@@ -1,9 +1,9 @@
 import firebase from "firebase/compat";
-import { getDateTime } from './utils';
-import { doc, getFirestore, setDoc, deleteDoc, updateDoc } from "firebase/firestore";
+import {getDateTime} from './utils';
+import {doc, getFirestore, setDoc} from "firebase/firestore/lite";
 
-export function initFirebase() {
-    if (!firebase._isInitialized) {
+export function initFirebase(){
+    if (!firebase._isInitialized){
         firebase.initializeApp({
             apiKey: "AIzaSyD1bMuPfFbi_cIyOTFdBd4eqJSMDh8-7FA",
             authDomain: "ziziteurs.firebaseapp.com",
@@ -16,7 +16,7 @@ export function initFirebase() {
     }
 };
 
-export function addSauveteur(firstName, lastName, info) {
+export function addSauveteur(firstName, lastName, description) {
     initFirebase();
     let db = getFirestore();
     try {
@@ -24,67 +24,25 @@ export function addSauveteur(firstName, lastName, info) {
         setDoc(doc(db, "sauveteurs", id), {
             firstName: firstName,
             lastName: lastName,
-            info: info
+            description: description
         })
-    } catch (e) {
+    } catch(e) {
         console.error("Error adding document: ", e);
     }
+    console.log("done")
 };
 
-export function delSauveteur(id) {
+export function addBateau(name, description) {
     initFirebase();
     let db = getFirestore();
     try {
-        deleteDoc(doc(db, 'sauveteurs', id));
-    } catch (e) {
-        console.error("Error deleting document: ", e);
+        let id = getDateTime() + "_" + name;
+        setDoc(doc(db, "bateaux", id), {
+            name: name,
+            description: description
+        })
+    } catch(e) {
+        console.error("Error adding document: ", e);
     }
+    console.log("done")
 };
-
-
-export async function updateSauveteur(id, firstName, lastName, info) {
-    initFirebase();
-    let db = getFirestore();
-    const docRef = doc(db, 'sauveteurs', id);
-
-    // Update the timestamp field with the value from the server
-    const updateSauveteur = await updateDoc(docRef, {
-        firstName: firstName,
-        lastName: lastName,
-        info: info
-    });
-}
-
-/*
-export function updateSauveteur(id, firstName, lastName, info) {
-    const db = getFirestore();
-
-    db.collection("sauveteurs").doc(id).update({
-        firstName: firstName,
-        lastName: lastName,
-        info: info
-    });
-}
-
-
-export function updateSauveteur(id, firstName, lastName, info) {
-    const db = getFirestore();
-
-    // A post entry.
-    const postData = {
-      firstName: firstName,
-      lastName: lastName,
-      info: info
-    };
-
-    // Get a key for a new Post.
-    const newPostKey = push(child(ref(db), 'sauveteurs')).key;
-
-    // Write the new post's data simultaneously in the posts list and the user's post list.
-    const updates = {};
-    updates['/sauveteurs/' + newPostKey] = postData;
-    updates['/user-sauveteurs/' + id + '/' + newPostKey] = postData;
-
-    return update(ref(db), updates);
-  };
-*/
