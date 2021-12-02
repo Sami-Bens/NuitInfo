@@ -5,7 +5,8 @@ function Header() {
     return (
         <div>
             <nav>
-                <div className = "div__images">
+                <div className = "div__header1">
+                    <div className = "div_images">
                     <img className = "logo_site_1" alt = "logo_site_1"/>
                     <img className = "logo_site_2" alt = "logo_site_2"/>
                     <img className = "logo_ziziteurs" alt = "logo_ziziteurs"/>
