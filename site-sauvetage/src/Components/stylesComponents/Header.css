@@ -1,0 +1,42 @@
+.nav_header{
+    background: #339adf;
+    color: #fff;
+}
+
+.div_header1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div_images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+}
+.logo_ziziteurs{
+    height: 130px;
+}
+.logo_site{
+    height:100px;
+}
+
+.menu_container{
+    width: 100%;
+    /*background-image: url(../../medias/wave.svg);*/
+}
+
+.menu_tab{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+@media screen and (max-width: 600px){
+    /*responsive quand l'écran est trop petit*/
+}

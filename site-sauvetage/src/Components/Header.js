@@ -1,18 +1,21 @@
 import React from 'react'
 import './stylesComponents/Header.css';
+import logo from '../medias/logo-site.png';
+import logoZiziteurs from '../medias/logo-ziziteurs.png';
 
 function Header() {
     return (
         <div>
-            <nav>
-                <div className="div__header1">
+            <nav className = "nav_header">
+                <div className="div_header1">
                     <div className="div_images">
-                        <img className="logo_site_1" alt="logo_site_1" />
-                        <img className="logo_site_2" alt="logo_site_2" />
-                        <img className="logo_ziziteurs" alt="logo_ziziteurs" />
+                        <img src = {logo} className="logo_site" alt="logo_site" />
+                        <img src = {logoZiziteurs} className="logo_ziziteurs" alt="logo_ziziteurs" />
                     </div>
                     <div className = "recherche">
-                        
+                        <input type = "text" name = "recherche_content" />
+                        <input type = "submit" value = "🔎"/>
+
                     </div>
                 </div>
                 <div className="menu_container">
