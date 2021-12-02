@@ -1,0 +1,52 @@
+input, button, select, textarea {
+	outline: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.input {
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 1rem;
+    text-transform: capitalize;
+    border-radius: 0.5rem;
+    background-color: var(--bg-main-color);
+    color: var(--text-main-color);
+    border: 1px solid var(--text-main-color);
+}
+
+.input::placeholder {
+    color: var(--text-main-color);
+}
+
+.input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.button-form {
+    font-weight: 700;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    background-color: var(--bg-main-color);
+    color: var(--text-main-color);
+    border: 1px solid var(--text-main-color);
+}
+
+.button-form:hover {
+    cursor: pointer;
+}
+
+.textarea {
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 1rem;
+    text-transform: capitalize;
+    border-radius: 0.5rem;
+    background-color: var(--bg-main-color);
+    color: var(--text-main-color);
+    border: 1px solid var(--text-main-color);
+}
