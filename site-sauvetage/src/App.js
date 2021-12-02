@@ -2,13 +2,14 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
+import LoginForm from './Components/LoginForm';
 import Header from './Components/Header';
 import AdminPage from './Components/AdminPage';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route exact path = "/" element = {<Home/>}/>
