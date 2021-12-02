@@ -14,8 +14,8 @@ function Header() {
                         <img src={logoZiziteurs} className="logo_ziziteurs" alt="logo_ziziteurs" />
                     </div>
                     <div className="recherche">
-                        <input type="text" name="recherche_content" placeholder="rechercher" />
-                        <input type="submit" value="🔎" />
+                        <input type="text" name="recherche_content" placeholder="rechercher" className = "barre_recherche"/>
+                        <input type="submit" value="🔎" className = "bouton_recherche" />
 
                     </div>
                 </div>
