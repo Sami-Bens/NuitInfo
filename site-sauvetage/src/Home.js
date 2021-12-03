@@ -6,11 +6,12 @@ import carte from './medias/carte.jpg';
 import dossier from './medias/dossier.png';
 import Journal from './medias/Journal.png';
 import { Recherche } from './database/firestore';
-
+import Image from './Components/Image';
 const Home = () => {
     Recherche("20211202225626_jean4_dupont")
     return (
         <div className = "homeContainer">
+            <Image/>
             <p className="intro">Bienvenue sur le site des sauveteurs du dunkerquois. Ce site rend hommage aux femmes, hommes et enfants qui ont réalisé des actes de sauvetages en milieu aquatique.
                 Ces sauveteurs, habitants du dunkerquois (de Bray-Dunes à Grand-Fort-Philippe), ont participé à plus de 900 sauvetages en mer et plus de 1100 sauvetages individuels.
                 Œuvrant avec courage, abnégation et souvent au mépris du risque ils méritent amplement que leurs actes soient pérennisés.</p>
