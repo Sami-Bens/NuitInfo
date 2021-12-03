@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { login } from '../database/connection';
 import './stylesComponents/LoginForm.css';
-import register from '../database/connection';
+import { register } from '../database/connection';
 
 export default function LoginForm() {
     const [detailsLog, setDetailsLog] = useState({ email: '', password: '' });
@@ -15,8 +16,9 @@ export default function LoginForm() {
 
     const Login = details => {
         console.log(details);
-
-        if (details.email === adminUser.email && details.password === adminUser.password) {
+        if (login(details.email, details.password)) {
+            console.log("ta grosssssssse mere")
+        } else if (details.email === adminUser.email && details.password === adminUser.password) {
             console.log('Logged in as Admin // TEST');
             setUser({
                 name: details.name,

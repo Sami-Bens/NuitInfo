@@ -4,7 +4,7 @@ import { initFirebase } from "./firestore";
 import sha512 from 'js-sha512';
 import { getDateTime } from "./utils";
 
-export default function register(name, email, password) {
+export function register(name, email, password) {
     initFirebase();
     let db = getFirestore();
     try {
