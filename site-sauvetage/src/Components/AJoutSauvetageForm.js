@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "./Form";
 import { addSauveteur, addBateau } from "../database/firestore";
+import { signInWithEmailAndPassword } from "../database/connection";
 
 const AjoutDataForm = props => {
   const [formData, setFormData] = useState({});
@@ -9,8 +10,10 @@ const AjoutDataForm = props => {
     switch (props.action) {
       case "sauveteur":
         return sauveteur();
-        case "bateau":
-          return bateau();
+      case "bateau":
+        return bateau();
+      case "login":
+        return login()
       default:
         console.log("Unexpected action");
     }
@@ -23,6 +26,14 @@ const AjoutDataForm = props => {
   const bateau = () => {
     addBateau(formData.lastName, formData.description)
   };
+
+  const afterLogin = () => {
+    console.log("ta mere")
+  }
+
+  const login = () => {
+    signInWithEmailAndPassword(formData.email, formData.password, afterLogin);
+  }
 
   const onSubmit = e => {
     e.preventDefault();
