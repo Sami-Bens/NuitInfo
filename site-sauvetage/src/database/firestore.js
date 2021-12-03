@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import firebase from "firebase/compat";
 import { getDateTime } from './utils';
-import { doc, getFirestore, setDoc, deleteDoc, updateDoc, collection, getDocs } from "firebase/firestore";
+import { doc, getFirestore, setDoc, deleteDoc, updateDoc, collection, getDocs, query } from "firebase/firestore";
 
 export function initFirebase() {
     if (!firebase._isInitialized) {
@@ -103,9 +103,24 @@ export async function Recherche(id) {
     const sauveteurs = await getDocs(collection(db, "sauveteurs"));
     sauveteurs.docs.map((doc) => {
         if (doc.id === id) {
-            listSauveteur.push({firstName: doc.data().firstName, lastName: doc.data().lastName, info: doc.data().info})
+            listSauveteur.push({ firstName: doc.data().firstName, lastName: doc.data().lastName, info: doc.data().info })
         }
-        
+
     })
     return listSauveteur;
 }
+
+/* ----- Marche pas ------
+
+
+export async function RechercheID() {
+    initFirebase();
+    let db = getFirestore();
+    let listSauveteur = []
+
+    const snapshot = await firebase.firestore().collection('events').get()
+    console.log(snapshot.docs.map(doc => doc.data()));
+
+     return null;
+}
+*/
