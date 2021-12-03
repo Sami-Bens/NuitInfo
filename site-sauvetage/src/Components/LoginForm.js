@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './stylesComponents/LoginForm.css';
 import { signInWithEmailAndPassword, registerWithEmailAndPassword } from '../database/connection'
+import {ReactSession} from 'react-client-session';
+import PageAjouterSauvetage from './PageAjouterSauvetage';
 
 export default function LoginForm() {
+    
     const [detailsLog, setDetailsLog] = useState({ email: '', password: '' });
     const [detailsReg, setDetailsReg] = useState({ name: '', email: '', password: '' });
     const [user, setUser] = useState({ name: '', email: '' });
@@ -12,10 +15,16 @@ export default function LoginForm() {
         email: 'admin@admin.com',
         password: 'admin123'
     }
+
+    const handleLogin = () => {
+        return (<PageAjouterSauvetage />)
+    }
+
     const Login = details => {
-        signInWithEmailAndPassword(details.email, details.password, )
-        console.log(details);
-        if (details.email === adminUser.email && details.password === adminUser.password) {
+        
+        signInWithEmailAndPassword(details.email, details.password, handleLogin)
+        
+        /*if (details.email === adminUser.email && details.password === adminUser.password) {
             console.log('Logged in as Admin // TEST');
             setUser({
                 name: details.name,
@@ -24,7 +33,7 @@ export default function LoginForm() {
         } else {
             console.log('Details do not match');
             setError('Details do not match');
-        }
+        }*/
     }
 
     const Register = details => {

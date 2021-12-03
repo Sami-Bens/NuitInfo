@@ -95,3 +95,19 @@ export async function updateBateau(id, description, name) {
         name: name
     });
 }
+
+export function addSauvetage(sauveteurs, bateaux, victimes, description) {
+    initFirebase();
+    let db = getFirestore();
+    try {
+        let id = getDateTime();
+        setDoc(doc(db, "sauvetages", id), {
+            sauveteurs: sauveteurs,
+            bateaux: bateaux,
+            victimes: victimes,
+            description: description
+        })
+    } catch (e) {
+        console.error("Error adding document: ", e);
+    }
+};

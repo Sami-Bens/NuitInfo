@@ -5,23 +5,27 @@ import Home from './Home';
 import LoginForm from './Components/LoginForm';
 import Header from './Components/Header';
 import AdminPage from './Components/AdminPage';
+import PageAjouterSauvetage from './Components/PageAjouterSauvetage';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <BrowserRouter history>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/signin" element={<Home />} />
-          <Route path="/Sauvetage" element={<Home />} />
-          <Route path="/Sauveteur" element={<Home />} />
-          <Route path="/admin" element={<AdminPage />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <BrowserRouter history>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/signin" element={<Home />} />
+            <Route path="/sauvetage" element={<PageAjouterSauvetage />} />
+            <Route path="/sauveteur" element={<Home />} />
+            <Route path="/admin" element={<AdminPage />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    );
+  }
+  
 }
 
 export default App;

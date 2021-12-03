@@ -64,7 +64,7 @@ function easterEgg(){
                             </NavLink>
                             <NavLink className="lien_home" to="/login" activeStyle="active" onClick = "refresh">
 
-                                <li className="element_menu">Login</li>
+                                <li className="element_menu">Ajouter un sauvetage</li>
                             </NavLink>
                         </Router>
                     </ul>
