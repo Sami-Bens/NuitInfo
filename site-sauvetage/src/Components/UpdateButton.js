@@ -4,7 +4,7 @@ import { updateSauveteur } from '../database/firestore.js';
 
 function UpdateButton() {
 
-    return(<button onClick={updateSauveteur("TestJeremy2", "Test1", "flute", "carapace")}>
+    return(<button onClick={() =>updateSauveteur("TestJeremy2", "caravane", "zizi", "Melvin")}>
         Test modification
     </button>)
     
