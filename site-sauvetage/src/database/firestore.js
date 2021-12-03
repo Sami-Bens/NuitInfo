@@ -1,9 +1,9 @@
 import firebase from "firebase/compat";
-import {getDateTime} from './utils';
-import {doc, getFirestore, setDoc} from "firebase/firestore/lite";
+import { getDateTime } from './utils';
+import { doc, getFirestore, setDoc, deleteDoc, updateDoc } from "firebase/firestore";
 
-export function initFirebase(){
-    if (!firebase._isInitialized){
+export function initFirebase() {
+    if (!firebase._isInitialized) {
         firebase.initializeApp({
             apiKey: "AIzaSyD1bMuPfFbi_cIyOTFdBd4eqJSMDh8-7FA",
             authDomain: "ziziteurs.firebaseapp.com",
@@ -16,7 +16,7 @@ export function initFirebase(){
     }
 };
 
-export function addSauveteur(firstName, lastName, description) {
+export function addSauveteur(firstName, lastName, info) {
     initFirebase();
     let db = getFirestore();
     try {
@@ -24,13 +24,38 @@ export function addSauveteur(firstName, lastName, description) {
         setDoc(doc(db, "sauveteurs", id), {
             firstName: firstName,
             lastName: lastName,
-            description: description
+            info: info
         })
-    } catch(e) {
+    } catch (e) {
         console.error("Error adding document: ", e);
     }
-    console.log("done")
 };
+
+export function delSauveteur(id) {
+    initFirebase();
+    let db = getFirestore();
+    try {
+        deleteDoc(doc(db, 'sauveteurs', id));
+    } catch (e) {
+        console.error("Error deleting document: ", e);
+    }
+};
+
+
+export async function updateSauveteur(id, firstName, lastName, info) {
+    initFirebase();
+    let db = getFirestore();
+    const docRef = doc(db, 'sauveteurs', id);
+
+    // Update the timestamp field with the value from the server
+    const updateSauveteur = await updateDoc(docRef, {
+        firstName: firstName,
+        lastName: lastName,
+        info: info
+    });
+}
+
+
 
 export function addBateau(name, description) {
     initFirebase();
@@ -41,7 +66,7 @@ export function addBateau(name, description) {
             name: name,
             description: description
         })
-    } catch(e) {
+    } catch (e) {
         console.error("Error adding document: ", e);
     }
     console.log("done")
