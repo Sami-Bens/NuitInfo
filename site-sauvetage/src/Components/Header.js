@@ -50,10 +50,6 @@ function easterEgg(){
                             <NavLink className="lien_home" activeStyle="active" to = "/" onClick = "refresh">
                                 <li className="element_menu">Accueil</li>
                             </NavLink>
-                            <NavLink className="lien_home" to="/recherche" activeStyle="active" onClick = "refresh">
-
-                                <li  className="element_menu">Recherche</li>
-                            </NavLink>
                             <NavLink className="lien_home" to="/sauveteurs" activeStyle="active" onClick = "refresh">
 
                                 <li className="element_menu">Sauveteurs</li>
