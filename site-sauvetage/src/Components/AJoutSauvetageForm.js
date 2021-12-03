@@ -22,7 +22,7 @@ const AjoutDataForm = props => {
 
   const bateau = () => {
     addBateau(formData.lastName, formData.description)
-  }
+  };
 
   const onSubmit = e => {
     e.preventDefault();

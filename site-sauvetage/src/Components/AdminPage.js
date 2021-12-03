@@ -7,22 +7,23 @@ const AdminPage = () => {
 		firstName: { type: "text", name: "firstName", text: "prénom", placeholder: 'prénom', required: true },
         lastName: { type: "text", name: "lastName", text: "nom", placeholder: 'nom', required: true },
         description: { type: "textarea", name: "description", text: "description", placeholder: 'description', required: true },
-	}
+	};
 
     const fieldsBateau = {
         lastName: { type: "text", name: "lastName", text: "nom", placeholder: 'nom', required: true },
         description: { type: "textarea", name: "description", text: "description", placeholder: 'description', required: true },
-	}
+	};
 
     const ajoutSauveteurForm = [
         fieldsSauveteur.firstName,
         fieldsSauveteur.lastName,
         fieldsSauveteur.description
-    ]
+    ];
+
     const ajoutBateauForm = [
         fieldsBateau.lastName,
         fieldsBateau.description
-    ]
+    ];
 
     return (
         <div>
