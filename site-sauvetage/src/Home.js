@@ -1,4 +1,6 @@
 import React from 'react'
+import DeleteButtonSauveteur from './Components/DeleteButtonSauveteur';
+import UpdateButtonSauveteur from './Components/UpdateButtonSauveteur';
 import './Home.css';
 import carte from './medias/carte.jpg';
 import dossier from './medias/dossier.png';
@@ -19,6 +21,8 @@ const Home = () => {
                 <img src={Journal} className="Journal" alt="Journal" />
             </div>
             </div>
+            <p><DeleteButtonSauveteur/></p>
+            <p><UpdateButtonSauveteur/></p>
         </div>
     )
 }

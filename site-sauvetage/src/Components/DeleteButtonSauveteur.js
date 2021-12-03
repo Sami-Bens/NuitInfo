@@ -3,12 +3,9 @@ import './stylesComponents/Header.css';
 import { delSauveteur } from '../database/firestore.js';
 
 function DeleteButtonSauveteur() {
-
     return(<button onClick={() =>delSauveteur("TestJeremy2")}>
         Test suppression
-    </button>)
-    
-    
+    </button>)    
 }
 
 export default DeleteButtonSauveteur
