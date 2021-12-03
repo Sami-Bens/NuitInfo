@@ -45,4 +45,4 @@ export function addBateau(name, description) {
         console.error("Error adding document: ", e);
     }
     console.log("done")
-};
+};  
