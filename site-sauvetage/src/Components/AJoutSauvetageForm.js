@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Form from "./Form";
-import { addSauveteur, addBateau } from "../database/firestore";
+import { addSauveteur, addBateau, addSauvetage } from "../database/firestore";
 import { signInWithEmailAndPassword } from "../database/connection";
 
 const AjoutDataForm = props => {
@@ -14,6 +14,8 @@ const AjoutDataForm = props => {
         return bateau();
       case "login":
         return login()
+      case "sauvetage":
+        return addSauvetage2();
       default:
         console.log("Unexpected action");
     }
@@ -33,6 +35,10 @@ const AjoutDataForm = props => {
 
   const login = () => {
     signInWithEmailAndPassword(formData.email, formData.password, afterLogin);
+  }
+
+  const addSauvetage2 = () => {
+    addSauvetage(formData.names, formData.boatNames, formData.victimNames, formData.description)
   }
 
   const onSubmit = e => {

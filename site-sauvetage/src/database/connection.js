@@ -1,17 +1,14 @@
 import firebase from "firebase/compat";
-import { doc, getFirestore, setDoc, getDocs, collection } from "firebase/firestore/lite";
-//import { initFirebase } from "./firestore";
-import sha512 from 'js-sha512';
-import { getDateTime } from "./utils";
+import { getFirestore } from "firebase/firestore/lite";
 
 const log = {
-    apiKey: "AIzaSyD1bMuPfFbi_cIyOTFdBd4eqJSMDh8-7FA",
-    authDomain: "ziziteurs.firebaseapp.com",
-    projectId: "ziziteurs",
-    storageBucket: "ziziteurs.appspot.com",
-    messagingSenderId: "275711303080",
-    appId: "1:275711303080:web:a3cd7147aa407b4c90919d",
-    measurementId: "G-M723CGTE16"
+    apiKey: "AIzaSyCbtfmxzOlcmhZPsYHkC6eFknQD7QSAA9U",
+    authDomain: "ziziteurs-b6b0b.firebaseapp.com",
+    projectId: "ziziteurs-b6b0b",
+    storageBucket: "ziziteurs-b6b0b.appspot.com",
+    messagingSenderId: "105856732388",
+    appId: "1:105856732388:web:e2454e48bae45555e9f0f1",
+    measurementId: "G-VE2K7BRB1C"
 }
 const app = firebase.initializeApp(log);
 
@@ -40,38 +37,6 @@ export const registerWithEmailAndPassword = async (name, email, password) => {
       });
     } catch (err) {
       console.error(err);
-      alert(err.message);
+      //alert(err.message);
     }
   };
-
-//export default { signInWithEmailAndPassword, registerWithEmailAndPassword }
-/*
-export function register(name, email, password) {
-    initFirebase();
-    let db = getFirestore();
-    try {
-        let id = getDateTime() + "_" + name;
-        setDoc(doc(db, "accounts", id), {
-            name: name,
-            email: email,
-            password: sha512(password)
-        })
-    } catch (e) {
-        console.error("Error adding document: ", e);
-    }
-    console.log("done");
-};
-
-export async function login(email, password) {
-    initFirebase();
-    let db = getFirestore();
-    const accounts = await getDocs(collection(db, "accounts"));
-    password = sha512(password);
-    let resp = []
-    accounts.docs.map((doc) => {
-        let a_email = doc.data().email;
-        let a_password = doc.data().password;
-        resp.push(email === a_email && password === a_password ? true : false);
-    })
-    return resp.includes(true)
-}*/
