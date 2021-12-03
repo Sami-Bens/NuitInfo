@@ -23,7 +23,6 @@ const Home = () => {
                 <img src={Journal} className="Journal" alt="Journal" />
             </div>
             </div>
-            <p><DeleteButtonSauveteur/></p>
         </div>
     )
 }
