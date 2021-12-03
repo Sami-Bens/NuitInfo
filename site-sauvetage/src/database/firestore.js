@@ -5,13 +5,13 @@ import { doc, getFirestore, setDoc, deleteDoc, updateDoc } from "firebase/firest
 export function initFirebase() {
     if (!firebase._isInitialized) {
         firebase.initializeApp({
-            apiKey: "AIzaSyD1bMuPfFbi_cIyOTFdBd4eqJSMDh8-7FA",
-            authDomain: "ziziteurs.firebaseapp.com",
-            projectId: "ziziteurs",
-            storageBucket: "ziziteurs.appspot.com",
-            messagingSenderId: "275711303080",
-            appId: "1:275711303080:web:a3cd7147aa407b4c90919d",
-            measurementId: "G-M723CGTE16"
+            apiKey: "AIzaSyCbtfmxzOlcmhZPsYHkC6eFknQD7QSAA9U",
+            authDomain: "ziziteurs-b6b0b.firebaseapp.com",
+            projectId: "ziziteurs-b6b0b",
+            storageBucket: "ziziteurs-b6b0b.appspot.com",
+            messagingSenderId: "105856732388",
+            appId: "1:105856732388:web:e2454e48bae45555e9f0f1",
+            measurementId: "G-VE2K7BRB1C"
         })
     }
 };
