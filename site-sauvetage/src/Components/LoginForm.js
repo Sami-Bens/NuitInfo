@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './stylesComponents/LoginForm.css';
+import register from '../database/connection';
 
 export default function LoginForm() {
     const [detailsLog, setDetailsLog] = useState({ name: '', email: '', password: '' });
@@ -28,8 +29,8 @@ export default function LoginForm() {
     }
 
     const Register = details => {
-        console.log(details);
-        console.log('Registered')
+        register(detailsReg);
+        console.log('Registered');
         setUser({
             name: details.name,
             email: details.email,
