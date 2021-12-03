@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import firebase from "firebase/compat";
 import { getDateTime } from './utils';
-import { doc, getFirestore, setDoc, deleteDoc, updateDoc } from "firebase/firestore";
+import { doc, getFirestore, setDoc, deleteDoc, updateDoc, collection, getDocs } from "firebase/firestore";
 
 export function initFirebase() {
     if (!firebase._isInitialized) {
@@ -47,8 +48,7 @@ export async function updateSauveteur(id, firstName, lastName, info) {
     let db = getFirestore();
     const docRef = doc(db, 'sauveteurs', id);
 
-    // Update the timestamp field with the value from the server
-    const update = await updateDoc(docRef, {
+    await updateDoc(docRef, {
         firstName: firstName,
         lastName: lastName,
         info: info
@@ -70,7 +70,7 @@ export function addBateau(name, description) {
         console.error("Error adding document: ", e);
     }
     console.log("done")
-};  
+};
 
 
 export function delBateau(id) {
@@ -89,9 +89,23 @@ export async function updateBateau(id, description, name) {
     let db = getFirestore();
     const docRef = doc(db, 'bateaux', id);
 
-    // Update the timestamp field with the value from the server
-    const update = await updateDoc(docRef, {
+    await updateDoc(docRef, {
         description: description,
         name: name
     });
+}
+
+export async function Recherche(id) {
+    initFirebase();
+    let db = getFirestore();
+    let listSauveteur = []
+
+    const sauveteurs = await getDocs(collection(db, "sauveteurs"));
+    sauveteurs.docs.map((doc) => {
+        if (doc.id === id) {
+            listSauveteur.push({firstName: doc.data().firstName, lastName: doc.data().lastName, info: doc.data().info})
+        }
+        
+    })
+    return listSauveteur;
 }

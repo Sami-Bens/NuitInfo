@@ -3,8 +3,10 @@ import './Home.css';
 import carte from './medias/carte.jpg';
 import dossier from './medias/dossier.png';
 import Journal from './medias/Journal.png';
+import { Recherche } from './database/firestore';
 
 const Home = () => {
+    Recherche("20211202225626_jean4_dupont")
     return (
         <div className = "homeContainer">
             <p class="intro">Bienvenue sur le site des sauveteurs du dunkerquois. Ce site rend hommage aux femmes, hommes et enfants qui ont réalisé des actes de sauvetages en milieu aquatique.
