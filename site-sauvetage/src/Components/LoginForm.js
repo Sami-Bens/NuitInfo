@@ -3,7 +3,7 @@ import './stylesComponents/LoginForm.css';
 import register from '../database/connection';
 
 export default function LoginForm() {
-    const [detailsLog, setDetailsLog] = useState({ name: '', email: '', password: '' });
+    const [detailsLog, setDetailsLog] = useState({ email: '', password: '' });
     const [detailsReg, setDetailsReg] = useState({ name: '', email: '', password: '' });
     const [user, setUser] = useState({ name: '', email: '' });
     const [error, setError] = useState('');
@@ -29,7 +29,7 @@ export default function LoginForm() {
     }
 
     const Register = details => {
-        register(detailsReg);
+        register(detailsReg.name, detailsReg.email, detailsReg.password);
         console.log('Registered');
         setUser({
             name: details.name,
@@ -52,10 +52,6 @@ export default function LoginForm() {
         <div className='LoginForm'>
             <form className='Login' onSubmit={submitHandlerLog}>
                 <h2>Login</h2>
-                <div className='form-grp'>
-                    <label htmlFor='nameLog'>Name:</label>
-                    <input type='text' name='nameLog' id='nameLog' onChange={e => setDetailsLog({ ...detailsLog, name: e.target.value })} value={detailsLog.name} />
-                </div>
                 <div className='form-grp'>
                     <label htmlFor='emailLog'>Email:</label>
                     <input type='email' name='emailLog' id='emailLog' onChange={e => setDetailsLog({ ...detailsLog, email: e.target.value })} value={detailsLog.email} />
