@@ -11,7 +11,6 @@ input, button, select, textarea {
 .input {
     margin: 0.5rem 0 0.5rem 0;
     padding: 1rem;
-    text-transform: capitalize;
     border-radius: 0.5rem;
     background-color: var(--bg-main-color);
     color: var(--text-main-color);
@@ -44,7 +43,6 @@ input, button, select, textarea {
 .textarea {
     margin: 0.5rem 0 0.5rem 0;
     padding: 1rem;
-    text-transform: capitalize;
     border-radius: 0.5rem;
     background-color: var(--bg-main-color);
     color: var(--text-main-color);

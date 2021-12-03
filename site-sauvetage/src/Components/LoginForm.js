@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './stylesComponents/LoginForm.css';
-import register from '../database/connection';
+import { signInWithEmailAndPassword, registerWithEmailAndPassword } from '../database/connection'
 
 export default function LoginForm() {
     const [detailsLog, setDetailsLog] = useState({ email: '', password: '' });
@@ -12,10 +12,9 @@ export default function LoginForm() {
         email: 'admin@admin.com',
         password: 'admin123'
     }
-
     const Login = details => {
+        signInWithEmailAndPassword(details.email, details.password, )
         console.log(details);
-
         if (details.email === adminUser.email && details.password === adminUser.password) {
             console.log('Logged in as Admin // TEST');
             setUser({
@@ -29,7 +28,7 @@ export default function LoginForm() {
     }
 
     const Register = details => {
-        register(detailsReg.name, detailsReg.email, detailsReg.password);
+        registerWithEmailAndPassword(details.name, details.email, details.password)
         console.log('Registered');
         setUser({
             name: details.name,
