@@ -2,7 +2,7 @@ import React from 'react'
 import './stylesComponents/Header.css';
 import { updateSauveteur } from '../database/firestore.js';
 
-function UpdateButton() {
+function UpdateButtonSauveteur() {
 
     return(<button onClick={() =>updateSauveteur("TestJeremy2", "caravane", "zizi", "Melvin")}>
         Test modification
@@ -10,4 +10,4 @@ function UpdateButton() {
     
 }
 
-export default UpdateButton
+export default UpdateButtonSauveteur

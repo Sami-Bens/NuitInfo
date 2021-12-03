@@ -2,7 +2,7 @@ import React from 'react'
 import './stylesComponents/Header.css';
 import { delSauveteur } from '../database/firestore.js';
 
-function DeleteButton() {
+function DeleteButtonSauveteur() {
 
     return(<button onClick={() =>delSauveteur("TestJeremy2")}>
         Test suppression
@@ -11,4 +11,4 @@ function DeleteButton() {
     
 }
 
-export default DeleteButton
+export default DeleteButtonSauveteur

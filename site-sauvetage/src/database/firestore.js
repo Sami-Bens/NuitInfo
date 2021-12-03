@@ -48,7 +48,7 @@ export async function updateSauveteur(id, firstName, lastName, info) {
     const docRef = doc(db, 'sauveteurs', id);
 
     // Update the timestamp field with the value from the server
-    const updateSauveteur = await updateDoc(docRef, {
+    const update = await updateDoc(docRef, {
         firstName: firstName,
         lastName: lastName,
         info: info
@@ -71,3 +71,27 @@ export function addBateau(name, description) {
     }
     console.log("done")
 };  
+
+
+export function delBateau(id) {
+    initFirebase();
+    let db = getFirestore();
+    try {
+        deleteDoc(doc(db, 'bateaux', id));
+    } catch (e) {
+        console.error("Error deleting document: ", e);
+    }
+};
+
+
+export async function updateBateau(id, description, name) {
+    initFirebase();
+    let db = getFirestore();
+    const docRef = doc(db, 'bateaux', id);
+
+    // Update the timestamp field with the value from the server
+    const update = await updateDoc(docRef, {
+        description: description,
+        name: name
+    });
+}
