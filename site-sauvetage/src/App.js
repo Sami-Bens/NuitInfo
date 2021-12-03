@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <BrowserRouter>
+      <BrowserRouter history>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<LoginForm />} />

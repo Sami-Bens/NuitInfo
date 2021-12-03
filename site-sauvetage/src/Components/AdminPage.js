@@ -14,6 +14,16 @@ const AdminPage = () => {
         description: { type: "textarea", name: "description", text: "description", placeholder: 'description', required: true },
 	};
 
+    const fieldsAdmin = {
+        email: { type: "email", name: "email", text: "email", placeholder: 'email', required: true },
+        password: { type: "password", name: "password", text: "password", placeholder: 'password', required: true },
+	};
+
+    const loginAdmin = [
+        fieldsAdmin.email,
+        fieldsAdmin.password
+    ]
+
     const ajoutSauveteurForm = [
         fieldsSauveteur.firstName,
         fieldsSauveteur.lastName,
@@ -38,6 +48,12 @@ const AdminPage = () => {
             formTitle="Ajouter un bateau"
             buttonText="Ajouter"
             formStructure={ajoutBateauForm}
+            />
+            <AjoutDataForm 
+            action="login"
+            formTitle="Login"
+            buttonText="connecter"
+            formStructure={loginAdmin}
             />
         </div>
     )
