@@ -14,28 +14,32 @@ function Header() {
                         <img src={logoZiziteurs} className="logo_ziziteurs" alt="logo_ziziteurs" />
                     </div>
                     <div className="recherche">
-                        <input type="text" name="recherche_content" placeholder="rechercher" className = "barre_recherche"/>
-                        <input type="submit" value="🔎" className = "bouton_recherche" />
+                        <input type="text" name="recherche_content" placeholder="rechercher" className="barre_recherche" />
+                        <input type="submit" value="🔎" className="bouton_recherche" />
 
                     </div>
                 </div>
                 <div className="menu_container">
                     <ul className="menu_tab">
                         <Router>
-                            <NavLink className="lien_home" to="/" ActiveStyle="active">
+                            <NavLink className="lien_home" to="/" activeStyle="active">
                                 <li className="element_menu">Accueil</li>
                             </NavLink>
-                            <NavLink className="lien_home" to="/recherche" ActiveStyle="active">
+                            <NavLink className="lien_home" to="/recherche" activeStyle="active">
 
                                 <li className="element_menu">Recherche</li>
                             </NavLink>
-                            <NavLink className="lien_home" to="/sauveteurs" ActiveStyle="active">
+                            <NavLink className="lien_home" to="/sauveteurs" activeStyle="active">
 
                                 <li className="element_menu">Sauveteurs</li>
                             </NavLink>
-                            <NavLink className="lien_home" to="/sauvetages" ActiveStyle="active">
+                            <NavLink className="lien_home" to="/sauvetages" activeStyle="active">
 
                                 <li className="element_menu">Sauvetages</li>
+                            </NavLink>
+                            <NavLink className="lien_home" to="/login" ActiveStyle="active">
+
+                                <li className="element_menu">Login</li>
                             </NavLink>
                         </Router>
                     </ul>
